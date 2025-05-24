@@ -1,0 +1,24 @@
+@page "/"
+@rendermode InteractiveServer
+
+@inject NavigationManager NavigationManager
+
+
+<div class="logo-container">
+    <div class="logo-text">HOMIO.</div>
+    <div class="tagline">Smart Living. Seamless Control.</div>
+    <button class="enter-btn" @onclick="() => GotoHomePage()">Enter</button>
+</div>
+
+
+
+
+@code {
+
+
+    private void GotoHomePage()
+    {
+        NavigationManager.NavigateTo("/home");
+    }
+
+}

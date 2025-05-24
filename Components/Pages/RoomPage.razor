@@ -1,0 +1,96 @@
+@using HomeController.Models
+@rendermode InteractiveServer
+
+<div class="main-content">
+    <div class="room-info">
+        <div class="temperature">19° COMFORTABLE</div>
+        <h1 class="room-title">@ActiveRoom </h1>
+        <div class="humidity">Humidity is good at 49%</div>
+    </div>
+
+    @if (ShowAddDeviceTypeDropdown)
+
+    {
+        <AddDeviceDropdown></AddDeviceDropdown>
+
+    }
+    @if (ShowDeviceDropdown)
+    {
+        <DynamicComponent Type="GetDeviceDropdown()"></DynamicComponent>
+    }
+
+    <div class="controls">
+        @foreach (var device in Devices)
+        {
+            <div class="control-item" @onclick="() => OpenDevicePopup(device)">
+                <div class="control-icon">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2">
+                        <path d="M12 2 L12 6" />
+                        <path d="M8 10 A4 4 0 0 1 16 10 A4 4 0 0 1 8 10" />
+                        <path d="M9 16 L15 16" />
+                        <path d="M11 20 L13 20" />
+                    </svg>
+                </div>
+                <div class="control-text">Lamp</div>
+                <div class="status">Off</div>
+            </div>
+        }
+        <div class="control-item" @onclick="() => ToggleAddDeviceDropdown()">
+            <div class="control-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2">
+                    <path d="M12 2 L12 6" />
+                    <path d="M8 10 A4 4 0 0 1 16 10 A4 4 0 0 1 8 10" />
+                    <path d="M9 16 L15 16" />
+                    <path d="M11 20 L13 20" />
+                </svg>
+            </div>
+            <div class="control-text">Add Device</div>
+            @* <div class="status"></div> *@
+        </div>
+    </div>
+    <!-- Repeat for more controls -->
+</div>
+
+
+@code {
+    [Parameter]
+    public String ActiveRoom { get; set; }
+    [Parameter]
+    public List<IDevice> Devices { get; set; } = new() { };
+    bool ShowAddDeviceTypeDropdown = false;
+    private Type selectedDeviceType;
+
+    IDevice selectedDevice;
+    bool ShowDeviceDropdown = false;
+
+
+    void AddDevice()
+    {
+
+        Console.WriteLine("Add Device Clicked");
+    }
+
+    void ToggleAddDeviceDropdown()
+    {
+        ShowAddDeviceTypeDropdown = !ShowAddDeviceTypeDropdown;
+    }
+
+    void OpenDevicePopup(IDevice device)
+    {
+        selectedDevice = device;
+        ShowDeviceDropdown = !ShowDeviceDropdown;
+    }
+    Type? GetDeviceDropdown()
+    {
+        return selectedDeviceType switch
+        {
+            Type t when t == typeof(Light) => typeof(LightComponent),
+
+            _ => null
+        }
+        ;
+    }
+
+
+
+}

@@ -1,0 +1,99 @@
+﻿@page "/home"
+@rendermode InteractiveServer
+
+@inject HomeController.Services.RoomService RoomService
+@inject HomeController.Services.DeviceService DeviceService
+
+@using HomeController.Models;
+
+
+<div class="container">
+    <div class="header">
+        <div class="brand">HOMIO.</div>
+        <div class="nav-menu">
+            @foreach (var room in Rooms)
+            {
+                <div class="nav-item @(room == ActiveRoom ? "active" : "")" @onclick="@(() => SetActiveRoom(room))">
+                    <span>@room</span>
+                    <div class="edit-tooltip">Double-click to edit</div>
+                </div>
+            }
+            @* <div class="add-room-btn" @onclick="ToggleAddRoomPopup">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                </svg>
+            </div> *@
+        </div>
+        <div class="status-bar">
+            <div class="time">@CurrentTime.ToString("HH:mm")</div>
+            @* <div class="menu-button">
+                <span></span><span></span><span></span>
+            </div> *@
+        </div>
+    </div>
+
+    @if (ShowAddRoomPopup)
+    {
+        <div class="add-room-popup">
+            <div class="popup-close" @onclick="ToggleAddRoomPopup">&times;</div>
+            <h3>Add New Room</h3>
+            <input type="text" @bind="NewRoomName" placeholder="Enter room name" />
+            <div class="popup-buttons">
+                <button class="popup-button popup-cancel" @onclick="ToggleAddRoomPopup">Cancel</button>
+                <button class="popup-button popup-add" @onclick="AddRoom">Add Room</button>
+            </div>
+        </div>
+    }
+
+    <RoomPage ActiveRoom="@ActiveRoom" Devices="@devices" />
+
+</div>
+
+@code {
+    public static List<string> Rooms { get; set; } = new() { "Room-1" };
+    public static List<IDevice> devices { get; set; } = new() { };
+    private string ActiveRoom = Rooms.FirstOrDefault() ?? "Room-1";
+    private string NewRoomName = "";
+    private bool ShowAddRoomPopup = false;
+
+    private DateTime CurrentTime = DateTime.Now;
+
+
+    protected override void OnInitialized()
+    {
+        var timer = new System.Timers.Timer(1000);
+        timer.Elapsed += (s, e) =>
+        {
+            CurrentTime = DateTime.Now;
+            InvokeAsync(StateHasChanged);
+        };
+        timer.Start();
+        Rooms = RoomService.GetRooms();
+        devices = DeviceService.GetDevices().Where(d => d.roomName?.Equals(ActiveRoom, StringComparison.OrdinalIgnoreCase) ==
+        true).ToList();
+    }
+
+    private void SetActiveRoom(string room)
+    {
+        ActiveRoom = room;
+        devices = DeviceService.GetDevices().Where(d => d.roomName?.Equals(ActiveRoom, StringComparison.OrdinalIgnoreCase) ==
+        true).ToList();
+    }
+
+    private void ToggleAddRoomPopup()
+    {
+        ShowAddRoomPopup = !ShowAddRoomPopup;
+        NewRoomName = "";
+    }
+
+    private void AddRoom()
+    {
+        if (!string.IsNullOrWhiteSpace(NewRoomName) && !Rooms.Contains(NewRoomName))
+        {
+            Rooms.Add(NewRoomName);
+            ActiveRoom = NewRoomName;
+        }
+        ToggleAddRoomPopup();
+    }
+}
