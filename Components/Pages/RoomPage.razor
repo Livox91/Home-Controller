@@ -1,22 +1,25 @@
+@using HomeController.Components.DeviceComponents
 @using HomeController.Models
 @rendermode InteractiveServer
+@inject HomeController.Services.DeviceService DeviceService
 
-<div class="main-content">
+<div class="main-content"
+    style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url('@backgroundImageURL');">
     <div class="room-info">
-        <div class="temperature">19° COMFORTABLE</div>
+        <div class="temperature"></div>
         <h1 class="room-title">@ActiveRoom </h1>
-        <div class="humidity">Humidity is good at 49%</div>
+        <div class="humidity"></div>
     </div>
 
     @if (ShowAddDeviceTypeDropdown)
 
     {
-        <AddDeviceDropdown></AddDeviceDropdown>
+        <AddDeviceDropdown onChanged="UpdateUI"></AddDeviceDropdown>
 
     }
     @if (ShowDeviceDropdown)
     {
-        <DynamicComponent Type="GetDeviceDropdown()"></DynamicComponent>
+        <DynamicComponent Type="GetDeviceDropdown()" Parameters="@GetDeviceComponentParameters()"></DynamicComponent>
     }
 
     <div class="controls">
@@ -31,66 +34,132 @@
                         <path d="M11 20 L13 20" />
                     </svg>
                 </div>
-                <div class="control-text">Lamp</div>
-                <div class="status">Off</div>
+                <div class="control-text">@device.deviceName</div>
+                <div class="status">@device.deviceStatus</div>
             </div>
         }
         <div class="control-item" @onclick="() => ToggleAddDeviceDropdown()">
             <div class="control-icon">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2">
-                    <path d="M12 2 L12 6" />
-                    <path d="M8 10 A4 4 0 0 1 16 10 A4 4 0 0 1 8 10" />
-                    <path d="M9 16 L15 16" />
-                    <path d="M11 20 L13 20" />
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <line x1="5" y1="12" x2="19" y2="12" />
                 </svg>
             </div>
             <div class="control-text">Add Device</div>
-            @* <div class="status"></div> *@
         </div>
     </div>
-    <!-- Repeat for more controls -->
+
 </div>
 
 
 @code {
     [Parameter]
-    public String ActiveRoom { get; set; }
+    public String? ActiveRoom { get; set; }
     [Parameter]
     public List<IDevice> Devices { get; set; } = new() { };
+
+    [Parameter]
+    public EventCallback OnUiUpdated { get; set; }
+    IDevice? selectedDevice;
+    private Type? selectedDeviceType;
+    bool selectedDeviceStatus;
     bool ShowAddDeviceTypeDropdown = false;
-    private Type selectedDeviceType;
 
-    IDevice selectedDevice;
-    bool ShowDeviceDropdown = false;
+    public bool ShowDeviceDropdown = false;
+    [Parameter]
+    public string backgroundImageURL { get; set; }
+    string responseBody = "";
 
-
-    void AddDevice()
+    private void UpdateUI()
     {
-
-        Console.WriteLine("Add Device Clicked");
+        ShowAddDeviceTypeDropdown = false;
+        ShowDeviceDropdown = false;
+        OnUiUpdated.InvokeAsync();
+        InvokeAsync(StateHasChanged);
     }
-
     void ToggleAddDeviceDropdown()
     {
         ShowAddDeviceTypeDropdown = !ShowAddDeviceTypeDropdown;
     }
-
-    void OpenDevicePopup(IDevice device)
+    public async void OpenDevicePopup(IDevice device)
     {
         selectedDevice = device;
+        selectedDeviceType = device.GetType();
+        selectedDeviceStatus = device.deviceStatus == "Running" ? true : false;
+        if (ShowDeviceDropdown == false)
+        {
+            if (selectedDeviceStatus)
+            {
+
+                responseBody = await DeviceService.GetDeviceStatus(device.deviceIp);
+            }
+            else
+            {
+                responseBody = "";
+            }
+        }
+        await InvokeAsync(StateHasChanged);
         ShowDeviceDropdown = !ShowDeviceDropdown;
+    }
+    public void ClosePopup()
+    {
+        ShowDeviceDropdown = false;
     }
     Type? GetDeviceDropdown()
     {
+
         return selectedDeviceType switch
         {
             Type t when t == typeof(Light) => typeof(LightComponent),
-
+            Type t when t == typeof(WaterHeater) => typeof(WaterHeaterComponent),
+            Type t when t == typeof(AirCooler) => typeof(AirCoolerComponent),
+            Type t when t == typeof(DishWasher) => typeof(DishWasherComponent),
+            Type t when t == typeof(WashingMachine) => typeof(WashingMachineComponent),
+            Type t when t == typeof(AirPurifier) => typeof(AirPurifierComponent),
+            Type t when t == typeof(HomeTheater) => typeof(HomeTheaterComponent),
+            Type t when t == typeof(Microwave) => typeof(MicrowaveComponent),
+            Type t when t == typeof(Television) => typeof(TelevisionComponent),
+            Type t when t == typeof(Fan) => typeof(FanComponent),
             _ => null
         }
         ;
     }
 
-
-
+    private Dictionary<string, object> GetDeviceComponentParameters()
+    {
+        return new Dictionary<string, object>
+{
+{ "OnSaveClicked", EventCallback.Factory.Create<string>(this, sendRequestToDeviceServer) },
+{ "OnTurnOnClicked", EventCallback.Factory.Create(this, startDevice) },
+{ "OnTurnOffClicked", EventCallback.Factory.Create(this, stopDevice) },
+{ "OnDeleteClicked", EventCallback.Factory.Create(this, deleteDevice) },
+{ "responseBody" , responseBody },
+{ "device", selectedDevice },
+};
+    }
+    public async Task sendRequestToDeviceServer(string Json)
+    {
+        await DeviceService.UpdateDevice(selectedDevice.deviceIp, Json);
+        ShowDeviceDropdown = false;
+        responseBody = await DeviceService.GetDeviceStatus(selectedDevice.deviceIp);
+        await OnUiUpdated.InvokeAsync();
+    }
+    public async void deleteDevice()
+    {
+        await DeviceService.DeleteDevice(selectedDevice.containderId);
+        ShowDeviceDropdown = false;
+        await OnUiUpdated.InvokeAsync();
+    }
+    public async void startDevice()
+    {
+        await DeviceService.StartDevice(selectedDevice.containderId);
+        ShowDeviceDropdown = false;
+        await OnUiUpdated.InvokeAsync();
+    }
+    public async void stopDevice()
+    {
+        await DeviceService.StopDevice(selectedDevice.containderId);
+        ShowDeviceDropdown = false;
+        await OnUiUpdated.InvokeAsync();
+    }
 }

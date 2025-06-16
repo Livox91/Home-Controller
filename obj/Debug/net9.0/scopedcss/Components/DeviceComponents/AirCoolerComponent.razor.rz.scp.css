@@ -1,0 +1,315 @@
+.popup-overlay[b-ycgge760ir] {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup-content[b-ycgge760ir] {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 32px;
+    width: 380px;
+    max-width: 90vw;
+    box-shadow:
+        0 25px 50px -12px rgba(0, 0, 0, 0.25),
+        0 0 0 1px rgba(255, 255, 255, 0.05);
+    position: relative;
+}
+
+/* Button Section */
+.button-section[b-ycgge760ir] {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.button-section button[b-ycgge760ir] {
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    color: white;
+    padding: 12px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    min-width: 80px;
+}
+
+.button-section button:hover[b-ycgge760ir] {
+    background: rgba(0, 0, 0, 0.8);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.button-section button:active[b-ycgge760ir] {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Special styling for different button types */
+.button-section button:first-child[b-ycgge760ir] {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.8), rgba(5, 150, 105, 0.8));
+    border-color: rgba(16, 185, 129, 0.3);
+}
+
+.button-section button:first-child:hover[b-ycgge760ir] {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.9), rgba(5, 150, 105, 0.9));
+    border-color: rgba(16, 185, 129, 0.5);
+    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.3);
+}
+
+.button-section button:nth-child(2)[b-ycgge760ir] {
+    background: linear-gradient(135deg, rgba(239, 68, 68, 0.8), rgba(220, 38, 38, 0.8));
+    border-color: rgba(239, 68, 68, 0.3);
+}
+
+.button-section button:nth-child(2):hover[b-ycgge760ir] {
+    background: linear-gradient(135deg, rgba(239, 68, 68, 0.9), rgba(220, 38, 38, 0.9));
+    border-color: rgba(239, 68, 68, 0.5);
+    box-shadow: 0 6px 20px rgba(239, 68, 68, 0.3);
+}
+
+.button-section button:last-child[b-ycgge760ir] {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.8), rgba(37, 99, 235, 0.8));
+    border-color: rgba(59, 130, 246, 0.3);
+}
+
+.button-section button:last-child:hover[b-ycgge760ir] {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.9), rgba(37, 99, 235, 0.9));
+    border-color: rgba(59, 130, 246, 0.5);
+    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .popup-content[b-ycgge760ir] {
+        padding: 24px;
+        width: calc(100vw - 32px);
+        margin: 16px;
+    }
+
+    .button-section[b-ycgge760ir] {
+        flex-direction: column;
+    }
+
+    .button-section button[b-ycgge760ir] {
+        width: 100%;
+    }
+}
+
+/* Animation for popup entry */
+@keyframes popupFadeIn-b-ycgge760ir {
+    from {
+        opacity: 0;
+        transform: scale(0.9) translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.popup-content[b-ycgge760ir] {
+    animation: popupFadeIn-b-ycgge760ir 0.3s ease-out;
+}
+
+/* Air Conditioner Specific Styles */
+.temperature-section[b-ycgge760ir] {
+    margin-bottom: 24px;
+}
+
+.temperature-section label[b-ycgge760ir] {
+    display: block;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 16px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* AC Temperature Slider */
+#ac-temp-slider[b-ycgge760ir] {
+    width: 100%;
+    height: 8px;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.2);
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    position: relative;
+}
+
+/* Webkit Slider Track for AC Temperature */
+#ac-temp-slider[b-ycgge760ir]::-webkit-slider-track {
+    width: 100%;
+    height: 8px;
+    border-radius: 50px;
+    background: linear-gradient(90deg, rgba(59, 130, 246, 0.5), rgba(139, 69, 19, 0.3));
+}
+
+/* Webkit Slider Thumb for AC Temperature */
+#ac-temp-slider[b-ycgge760ir]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #3b82f6, #1e40af);
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.15),
+        0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+}
+
+#ac-temp-slider[b-ycgge760ir]::-webkit-slider-thumb:hover {
+    transform: scale(1.1);
+    box-shadow:
+        0 6px 16px rgba(59, 130, 246, 0.3),
+        0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Firefox Slider Track for AC Temperature */
+#ac-temp-slider[b-ycgge760ir]::-moz-range-track {
+    width: 100%;
+    height: 8px;
+    border-radius: 50px;
+    background: linear-gradient(90deg, rgba(59, 130, 246, 0.5), rgba(139, 69, 19, 0.3));
+    border: none;
+}
+
+/* Firefox Slider Thumb for AC Temperature */
+#ac-temp-slider[b-ycgge760ir]::-moz-range-thumb {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #3b82f6, #1e40af);
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.15),
+        0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+}
+
+#ac-temp-slider[b-ycgge760ir]::-moz-range-thumb:hover {
+    transform: scale(1.1);
+}
+
+/* Temperature Value Display */
+.temperature-value[b-ycgge760ir] {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    margin-top: 8px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Fan Speed Section */
+.fan-speed-section[b-ycgge760ir] {
+    margin-bottom: 24px;
+}
+
+.fan-speed-section label[b-ycgge760ir] {
+    display: block;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 16px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.fan-speed-controls[b-ycgge760ir] {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
+
+.fan-button[b-ycgge760ir] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    color: rgba(255, 255, 255, 0.8);
+    padding: 16px 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 80px;
+    flex: 1;
+}
+
+.fan-button:hover[b-ycgge760ir] {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.fan-button.active[b-ycgge760ir] {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.6), rgba(37, 99, 235, 0.6));
+    border-color: rgba(59, 130, 246, 0.4);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.3);
+}
+
+.fan-button.active:hover[b-ycgge760ir] {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.7), rgba(37, 99, 235, 0.7));
+    border-color: rgba(59, 130, 246, 0.5);
+}
+
+.fan-icon[b-ycgge760ir] {
+    font-size: 24px;
+    line-height: 1;
+}
+
+.fan-label[b-ycgge760ir] {
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Responsive adjustments for AC */
+@media (max-width: 480px) {
+    .fan-speed-controls[b-ycgge760ir] {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .fan-button[b-ycgge760ir] {
+        flex-direction: row;
+        justify-content: center;
+        gap: 12px;
+        padding: 12px 16px;
+        min-width: auto;
+    }
+
+    .fan-icon[b-ycgge760ir] {
+        font-size: 20px;
+    }
+}

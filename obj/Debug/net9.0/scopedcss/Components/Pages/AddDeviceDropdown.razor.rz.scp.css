@@ -1,0 +1,176 @@
+.device-form[b-qm3dg1fg3b] {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    padding: 32px;
+    width: 400px;
+    max-width: 90vw;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    box-shadow:
+        0 25px 50px -12px rgba(0, 0, 0, 0.25),
+        0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+.form-group[b-qm3dg1fg3b] {
+    margin-bottom: 24px;
+}
+
+.form-group:last-child[b-qm3dg1fg3b] {
+    margin-bottom: 0;
+}
+
+.form-group label[b-qm3dg1fg3b] {
+    display: block;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.form-group input[type="text"][b-qm3dg1fg3b] {
+    width: 100%;
+    padding: 12px 16px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: white;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.form-group input[type="text"]:focus[b-qm3dg1fg3b] {
+    border-color: rgba(59, 130, 246, 0.5);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.form-group input[type="text"][b-qm3dg1fg3b]::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.dropdown[b-qm3dg1fg3b] {
+    position: relative;
+}
+
+.dropdown-header[b-qm3dg1fg3b] {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    user-select: none;
+}
+
+.dropdown-header:hover[b-qm3dg1fg3b] {
+    background: rgba(0, 0, 0, 0.4);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.dropdown-header span:first-child[b-qm3dg1fg3b] {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.dropdown-icon[b-qm3dg1fg3b] {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 12px;
+    transition: transform 0.2s ease;
+}
+
+.dropdown-menu[b-qm3dg1fg3b] {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    margin-top: 4px;
+    display: block;
+    overflow: hidden;
+    z-index: 1001;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+}
+
+.dropdown-item[b-qm3dg1fg3b] {
+    padding: 12px 16px;
+    color: rgba(255, 255, 255, 0.9);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 14px;
+}
+
+.dropdown-item:hover[b-qm3dg1fg3b] {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.dropdown-item:not(:last-child)[b-qm3dg1fg3b] {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+button[b-qm3dg1fg3b] {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.8), rgba(37, 99, 235, 0.8));
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    border-radius: 8px;
+    color: white;
+    padding: 12px 24px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 8px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+button:hover[b-qm3dg1fg3b] {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.9), rgba(37, 99, 235, 0.9));
+    border-color: rgba(59, 130, 246, 0.5);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+button:active[b-qm3dg1fg3b] {
+    transform: translateY(0);
+    box-shadow: 0 2px 6px rgba(59, 130, 246, 0.2);
+}
+
+/* Optional overlay background */
+.device-form-overlay[b-qm3dg1fg3b] {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 999;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .device-form[b-qm3dg1fg3b] {
+        padding: 24px;
+        width: calc(100vw - 32px);
+        margin: 16px;
+    }
+}

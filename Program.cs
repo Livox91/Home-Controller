@@ -4,8 +4,7 @@ using HomeController.Services;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddRazorComponents()
-    .AddInteractiveServerComponents();
+builder.Services.AddRazorComponents().AddInteractiveServerComponents();
 
 builder.Services.AddScoped<DbHelper>();
 builder.Services.AddScoped<RoomService>();
@@ -13,10 +12,9 @@ builder.Services.AddScoped<RoomService>();
 builder.Services.AddSingleton<DeviceService>();
 builder.Services.AddHttpClient<DeviceService>();
 
-var ipAssigner = new IPAssigner(new HttpClient());
+var ipAssigner = new IPAssigner(new HttpClient(), builder.Configuration);
 await ipAssigner.InitializeAsync();
 builder.Services.AddSingleton<IPAssigner>(ipAssigner);
-
 
 var app = builder.Build();
 
@@ -29,7 +27,6 @@ if (!app.Environment.IsDevelopment())
 }
 
 // app.UseHttpsRedirection();
-
 
 app.UseAntiforgery();
 

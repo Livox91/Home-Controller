@@ -13,23 +13,21 @@
         <div class="nav-menu">
             @foreach (var room in Rooms)
             {
-                <div class="nav-item @(room == ActiveRoom ? "active" : "")" @onclick="@(() => SetActiveRoom(room))">
+                <div class="nav-item @ActiveRoom" @onclick="() => SetActiveRoom(room)"
+                    @ondblclick="() => ToggleEditRoomPopup()">
                     <span>@room</span>
                     <div class="edit-tooltip">Double-click to edit</div>
                 </div>
             }
-            @* <div class="add-room-btn" @onclick="ToggleAddRoomPopup">
+            <div class="add-room-btn" @onclick="ToggleAddRoomPopup">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <line x1="12" y1="5" x2="12" y2="19" />
                     <line x1="5" y1="12" x2="19" y2="12" />
                 </svg>
-            </div> *@
+            </div>
         </div>
         <div class="status-bar">
             <div class="time">@CurrentTime.ToString("HH:mm")</div>
-            @* <div class="menu-button">
-                <span></span><span></span><span></span>
-            </div> *@
         </div>
     </div>
 
@@ -39,6 +37,9 @@
             <div class="popup-close" @onclick="ToggleAddRoomPopup">&times;</div>
             <h3>Add New Room</h3>
             <input type="text" @bind="NewRoomName" placeholder="Enter room name" />
+            <label class="file-upload-label">
+                <InputFile hidden class="input-file" OnChange="HandleRoomImage"></InputFile>
+            </label>
             <div class="popup-buttons">
                 <button class="popup-button popup-cancel" @onclick="ToggleAddRoomPopup">Cancel</button>
                 <button class="popup-button popup-add" @onclick="AddRoom">Add Room</button>
@@ -46,20 +47,54 @@
         </div>
     }
 
-    <RoomPage ActiveRoom="@ActiveRoom" Devices="@devices" />
+    @if (ShowEditRoomPopup)
+    {
+        <div class="edit-room-popup">
+            <div class="popup-close" @onclick="ToggleEditRoomPopup">&times;</div>
+            <h3>Edit Room</h3>
+            <input type="text" @bind="EditRoomName" placeholder="Enter room name" />
+            <div class="popup-buttons">
+                <button class="popup-button popup-delete" @onclick="DeleteRoom">Delete</button>
+                <button class="popup-button popup-save" @onclick="() => ChangeRoomName(EditRoomName)">Save</button>
+            </div>
+        </div>
+    }
+
+
+    <RoomPage @ref="childRef" ActiveRoom="@ActiveRoom" backgroundImageURL=@bgImage Devices="@devices"
+        OnUiUpdated="UpdateUI" />
 
 </div>
 
 @code {
+    private RoomPage? childRef;
+    bool ShowDeviceDropdown = false;
     public static List<string> Rooms { get; set; } = new() { "Room-1" };
     public static List<IDevice> devices { get; set; } = new() { };
-    private string ActiveRoom = Rooms.FirstOrDefault() ?? "Room-1";
+    private string ActiveRoom;
     private string NewRoomName = "";
+    private string imageString = "";
+    private string EditRoomName = "";
     private bool ShowAddRoomPopup = false;
-
+    private bool ShowEditRoomPopup = false;
     private DateTime CurrentTime = DateTime.Now;
 
+    private string bgImage; // Default background image
+    private void UpdateUI()
+    {
+        Rooms = RoomService.GetRooms();
+        if (!Rooms.Contains(ActiveRoom))
+        {
+            ActiveRoom = Rooms.FirstOrDefault() ?? "Room-1";
+            bgImage = RoomService.GetRoomImage(ActiveRoom) ?? "images/lounge.jpg";
+        }
+        devices = DeviceService.GetDevices()
+        .Where(d => d.roomName?.Equals(ActiveRoom, StringComparison.OrdinalIgnoreCase) == true)
+        .ToList();
+        Console.WriteLine($"Active Room: {ActiveRoom}");
+        InvokeAsync(StateHasChanged);
 
+    }
     protected override void OnInitialized()
     {
         var timer = new System.Timers.Timer(1000);
@@ -70,15 +105,29 @@
         };
         timer.Start();
         Rooms = RoomService.GetRooms();
-        devices = DeviceService.GetDevices().Where(d => d.roomName?.Equals(ActiveRoom, StringComparison.OrdinalIgnoreCase) ==
+
+        var allDevices = DeviceService.GetDevices();
+        devices = allDevices.Where(d => d.roomName?.Equals(ActiveRoom, StringComparison.OrdinalIgnoreCase) ==
         true).ToList();
+        ActiveRoom = Rooms.FirstOrDefault() ?? "Room-1";
+        bgImage = RoomService.GetRoomImage(ActiveRoom) ?? "images/lounge.jpg";
     }
 
+    private void ToggleEditRoomPopup()
+    {
+        ShowEditRoomPopup = !ShowEditRoomPopup;
+        EditRoomName = ActiveRoom;
+    }
     private void SetActiveRoom(string room)
     {
         ActiveRoom = room;
-        devices = DeviceService.GetDevices().Where(d => d.roomName?.Equals(ActiveRoom, StringComparison.OrdinalIgnoreCase) ==
+        bgImage = RoomService.GetRoomImage(ActiveRoom) ?? "images/lounge.jpg";
+        var allDevices = DeviceService.GetDevices();
+        devices = allDevices.Where(d => d.roomName?.Equals(ActiveRoom, StringComparison.OrdinalIgnoreCase) ==
         true).ToList();
+        UpdateUI();
+        childRef.ClosePopup();
+
     }
 
     private void ToggleAddRoomPopup()
@@ -91,9 +140,52 @@
     {
         if (!string.IsNullOrWhiteSpace(NewRoomName) && !Rooms.Contains(NewRoomName))
         {
-            Rooms.Add(NewRoomName);
+            RoomService.AddRoom(NewRoomName, imageString);
             ActiveRoom = NewRoomName;
+            bgImage = RoomService.GetRoomImage(ActiveRoom) ?? "images/lounge.jpg";
         }
         ToggleAddRoomPopup();
+    }
+    private async void DeleteRoom()
+    {
+        if (Rooms.Contains(ActiveRoom))
+        {
+            await DeviceService.DeleteDevicesByRoom(ActiveRoom);
+            RoomService.DeleteRoom(ActiveRoom);
+            Rooms.Remove(ActiveRoom);
+            ActiveRoom = Rooms.FirstOrDefault() ?? "Room-1";
+            bgImage = RoomService.GetRoomImage(ActiveRoom) ?? "images/lounge.jpg";
+            UpdateUI();
+        }
+
+        ToggleEditRoomPopup();
+    }
+
+    private void ChangeRoomName(string newName)
+    {
+        if (!string.IsNullOrWhiteSpace(newName) && !Rooms.Contains(newName))
+        {
+            RoomService.UpdateRoom(ActiveRoom, newName);
+            ActiveRoom = newName;
+            bgImage = RoomService.GetRoomImage(ActiveRoom) ?? "images/lounge.jpg";
+            UpdateUI();
+        }
+    }
+
+    private async Task HandleRoomImage(InputFileChangeEventArgs e)
+    {
+        var file = e.File;
+        if (file != null && file.Size > 0)
+        {
+            using var stream = file.OpenReadStream(maxAllowedSize: 10_000_000); // Optional: Limit to 10 MB
+            using var ms = new MemoryStream();
+            await stream.CopyToAsync(ms); // Ensures the full content is read
+
+            var buffer = ms.ToArray();
+            imageString = "data:image/jpeg;base64," + Convert.ToBase64String(buffer);
+
+            Console.WriteLine($"Image for room {ActiveRoom} uploaded, size: {file.Size} bytes, read: {buffer.Length} bytes.");
+        }
+
     }
 }

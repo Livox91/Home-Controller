@@ -4,35 +4,24 @@ namespace HomeController.Models
 {
     public class WaterHeater : IDevice
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public bool IsOn { get; set; }
         public double CurrentTemperature { get; set; }
         public double TargetTemperature { get; set; }
-        public DateTime LastUpdated { get; set; }
+        public string LastUpdated { get; set; } = string.Empty;
 
-        public string Ipaddr { get; set; }
-        override public void TurnOn()
+        public override void TurnOn()
         {
-            IsOn = true;
-            LastUpdated = DateTime.Now;
+            LastUpdated = DateTime.Now.ToString();
         }
 
-        override public void TurnOff()
+        public override void TurnOff()
         {
-            IsOn = false;
-            LastUpdated = DateTime.Now;
+            LastUpdated = DateTime.Now.ToString();
         }
 
         public void SetTargetTemperature(double temperature)
         {
             TargetTemperature = temperature;
-            LastUpdated = DateTime.Now;
-        }
-
-        public override string ToString()
-        {
-            return $"WaterHeater: {Name}, IsOn: {IsOn}, CurrentTemp: {CurrentTemperature}, TargetTemp: {TargetTemperature}";
+            LastUpdated = DateTime.Now.ToString();
         }
     }
 }

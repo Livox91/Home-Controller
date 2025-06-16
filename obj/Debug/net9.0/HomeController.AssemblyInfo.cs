@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HomeController")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+151507a9603f168961b05b8b98cc5ab61916f19a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f76522be479bf436dbdcf62b7206d64a16ac88f6")]
 [assembly: System.Reflection.AssemblyProductAttribute("HomeController")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HomeController")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

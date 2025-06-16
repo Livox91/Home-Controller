@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\HP\\Documents\\Projects\\Home-Controller\\Frontend\\HomeController\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B1C36AAB-6098-C9C4-6B5E-86214EA8A96C}|HomeController.csproj|c:\\users\\hp\\documents\\projects\\home-controller\\frontend\\homecontroller\\components\\pages\\adddevicedropdown.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B1C36AAB-6098-C9C4-6B5E-86214EA8A96C}|HomeController.csproj|solutionrelative:components\\pages\\adddevicedropdown.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AddDeviceDropdown.razor",
+              "DocumentMoniker": "C:\\Users\\HP\\Documents\\Projects\\Home-Controller\\Frontend\\HomeController\\Components\\Pages\\AddDeviceDropdown.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\AddDeviceDropdown.razor",
+              "ToolTip": "C:\\Users\\HP\\Documents\\Projects\\Home-Controller\\Frontend\\HomeController\\Components\\Pages\\AddDeviceDropdown.razor",
+              "RelativeToolTip": "Components\\Pages\\AddDeviceDropdown.razor",
+              "ViewState": "AgIAADMAAAAAAAAAAAAAAEoAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-26T10:06:26.962Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

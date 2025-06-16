@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "uQlFb0/W2dTtHwu6X07sT6WT3FczDFisceZw+gs7NSs=",
+  "Hash": "/Lr7Qo6ORVAwQOs4cgqWkXBepW3C+HQlM9pqZnjvlpA=",
   "Source": "HomeController",
   "BasePath": "_content/HomeController",
   "Mode": "Default",
@@ -269,12 +269,12 @@
       "OriginalItemSpec": "C:\\Users\\HP\\Documents\\Projects\\Home-Controller\\Frontend\\HomeController\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\HP\\Documents\\Projects\\Home-Controller\\Frontend\\HomeController\\obj\\Debug\\net9.0\\compressed\\7l5v4e5f9o-0f5god71x2.gz",
+      "Identity": "C:\\Users\\HP\\Documents\\Projects\\Home-Controller\\Frontend\\HomeController\\obj\\Debug\\net9.0\\compressed\\7l5v4e5f9o-qg2a3ksek2.gz",
       "SourceId": "HomeController",
       "SourceType": "Computed",
       "ContentRoot": "C:\\Users\\HP\\Documents\\Projects\\Home-Controller\\Frontend\\HomeController\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/HomeController",
-      "RelativePath": "HomeController#[.{fingerprint=0f5god71x2}]!.bundle.scp.css.gz",
+      "RelativePath": "HomeController#[.{fingerprint=qg2a3ksek2}]!.bundle.scp.css.gz",
       "AssetKind": "All",
       "AssetMode": "Reference",
       "AssetRole": "Alternative",
@@ -283,8 +283,8 @@
       "RelatedAsset": "C:\\Users\\HP\\Documents\\Projects\\Home-Controller\\Frontend\\HomeController\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\HomeController.bundle.scp.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "jo9as5fvl1",
-      "Integrity": "fTABoWcvTQLtcfc1Sg/tg/xzoejlxhC9zYVchFaHjAA=",
+      "Fingerprint": "w0uk6srmph",
+      "Integrity": "ALufCQiCra9nxxiWb4AsC/mUl3kwZGzKwifD7e6S5I0=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\HP\\Documents\\Projects\\Home-Controller\\Frontend\\HomeController\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\HomeController.bundle.scp.css"
@@ -731,12 +731,12 @@
       "OriginalItemSpec": "C:\\Users\\HP\\Documents\\Projects\\Home-Controller\\Frontend\\HomeController\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Identity": "C:\\Users\\HP\\Documents\\Projects\\Home-Controller\\Frontend\\HomeController\\obj\\Debug\\net9.0\\compressed\\s389oewfaj-0f5god71x2.gz",
+      "Identity": "C:\\Users\\HP\\Documents\\Projects\\Home-Controller\\Frontend\\HomeController\\obj\\Debug\\net9.0\\compressed\\s389oewfaj-qg2a3ksek2.gz",
       "SourceId": "HomeController",
       "SourceType": "Computed",
       "ContentRoot": "C:\\Users\\HP\\Documents\\Projects\\Home-Controller\\Frontend\\HomeController\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/HomeController",
-      "RelativePath": "HomeController#[.{fingerprint=0f5god71x2}]?.styles.css.gz",
+      "RelativePath": "HomeController#[.{fingerprint=qg2a3ksek2}]?.styles.css.gz",
       "AssetKind": "All",
       "AssetMode": "CurrentProject",
       "AssetRole": "Alternative",
@@ -745,8 +745,8 @@
       "RelatedAsset": "C:\\Users\\HP\\Documents\\Projects\\Home-Controller\\Frontend\\HomeController\\obj\\Debug\\net9.0\\scopedcss\\bundle\\HomeController.styles.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "jo9as5fvl1",
-      "Integrity": "fTABoWcvTQLtcfc1Sg/tg/xzoejlxhC9zYVchFaHjAA=",
+      "Fingerprint": "w0uk6srmph",
+      "Integrity": "ALufCQiCra9nxxiWb4AsC/mUl3kwZGzKwifD7e6S5I0=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\HP\\Documents\\Projects\\Home-Controller\\Frontend\\HomeController\\obj\\Debug\\net9.0\\scopedcss\\bundle\\HomeController.styles.css"
@@ -1018,8 +1018,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "ScopedCss",
       "AssetTraitValue": "ApplicationBundle",
-      "Fingerprint": "0f5god71x2",
-      "Integrity": "bJsNL0Hkn6Z5c5huyy+CkAw7/axE0Q55AFZ1vv3AfGM=",
+      "Fingerprint": "qg2a3ksek2",
+      "Integrity": "+h3S7vqAEMYJG895AnxQ2ropBiCcYObds2pYCKDwrUQ=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\HP\\Documents\\Projects\\Home-Controller\\Frontend\\HomeController\\obj\\Debug\\net9.0\\scopedcss\\bundle\\HomeController.styles.css"
@@ -1039,8 +1039,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "ScopedCss",
       "AssetTraitValue": "ProjectBundle",
-      "Fingerprint": "0f5god71x2",
-      "Integrity": "bJsNL0Hkn6Z5c5huyy+CkAw7/axE0Q55AFZ1vv3AfGM=",
+      "Fingerprint": "qg2a3ksek2",
+      "Integrity": "+h3S7vqAEMYJG895AnxQ2ropBiCcYObds2pYCKDwrUQ=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\HP\\Documents\\Projects\\Home-Controller\\Frontend\\HomeController\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\HomeController.bundle.scp.css"
@@ -2415,13 +2415,13 @@
       ]
     },
     {
-      "Route": "HomeController.0f5god71x2.bundle.scp.css",
-      "AssetFile": "C:\\Users\\HP\\Documents\\Projects\\Home-Controller\\Frontend\\HomeController\\obj\\Debug\\net9.0\\compressed\\7l5v4e5f9o-0f5god71x2.gz",
+      "Route": "HomeController.bundle.scp.css",
+      "AssetFile": "C:\\Users\\HP\\Documents\\Projects\\Home-Controller\\Frontend\\HomeController\\obj\\Debug\\net9.0\\compressed\\7l5v4e5f9o-qg2a3ksek2.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000288683603"
+          "Quality": "0.000098629056"
         }
       ],
       "ResponseHeaders": [
@@ -2431,19 +2431,19 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3463"
+          "Value": "10138"
         },
         {
           "Name": "ETag",
-          "Value": "\"fTABoWcvTQLtcfc1Sg/tg/xzoejlxhC9zYVchFaHjAA=\""
+          "Value": "\"ALufCQiCra9nxxiWb4AsC/mUl3kwZGzKwifD7e6S5I0=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 23 May 2025 17:53:40 GMT"
+          "Value": "Mon, 09 Jun 2025 17:23:48 GMT"
         },
         {
           "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
+          "Value": "no-cache"
         },
         {
           "Name": "Content-Encoding",
@@ -2459,26 +2459,18 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"bJsNL0Hkn6Z5c5huyy+CkAw7/axE0Q55AFZ1vv3AfGM=\""
+          "Value": "W/\"+h3S7vqAEMYJG895AnxQ2ropBiCcYObds2pYCKDwrUQ=\""
         }
       ],
       "EndpointProperties": [
         {
-          "Name": "fingerprint",
-          "Value": "0f5god71x2"
-        },
-        {
-          "Name": "label",
-          "Value": "HomeController.bundle.scp.css"
-        },
-        {
           "Name": "integrity",
-          "Value": "sha256-bJsNL0Hkn6Z5c5huyy+CkAw7/axE0Q55AFZ1vv3AfGM="
+          "Value": "sha256-+h3S7vqAEMYJG895AnxQ2ropBiCcYObds2pYCKDwrUQ="
         }
       ]
     },
     {
-      "Route": "HomeController.0f5god71x2.bundle.scp.css",
+      "Route": "HomeController.bundle.scp.css",
       "AssetFile": "C:\\Users\\HP\\Documents\\Projects\\Home-Controller\\Frontend\\HomeController\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\HomeController.bundle.scp.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -2488,7 +2480,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "24163"
+          "Value": "113945"
         },
         {
           "Name": "Content-Type",
@@ -2496,11 +2488,156 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"bJsNL0Hkn6Z5c5huyy+CkAw7/axE0Q55AFZ1vv3AfGM=\""
+          "Value": "\"+h3S7vqAEMYJG895AnxQ2ropBiCcYObds2pYCKDwrUQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 23 May 2025 17:53:40 GMT"
+          "Value": "Mon, 09 Jun 2025 17:23:48 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-+h3S7vqAEMYJG895AnxQ2ropBiCcYObds2pYCKDwrUQ="
+        }
+      ]
+    },
+    {
+      "Route": "HomeController.bundle.scp.css.gz",
+      "AssetFile": "C:\\Users\\HP\\Documents\\Projects\\Home-Controller\\Frontend\\HomeController\\obj\\Debug\\net9.0\\compressed\\7l5v4e5f9o-qg2a3ksek2.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "10138"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ALufCQiCra9nxxiWb4AsC/mUl3kwZGzKwifD7e6S5I0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 09 Jun 2025 17:23:48 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ALufCQiCra9nxxiWb4AsC/mUl3kwZGzKwifD7e6S5I0="
+        }
+      ]
+    },
+    {
+      "Route": "HomeController.qg2a3ksek2.bundle.scp.css",
+      "AssetFile": "C:\\Users\\HP\\Documents\\Projects\\Home-Controller\\Frontend\\HomeController\\obj\\Debug\\net9.0\\compressed\\7l5v4e5f9o-qg2a3ksek2.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000098629056"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "10138"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ALufCQiCra9nxxiWb4AsC/mUl3kwZGzKwifD7e6S5I0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 09 Jun 2025 17:23:48 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"+h3S7vqAEMYJG895AnxQ2ropBiCcYObds2pYCKDwrUQ=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "qg2a3ksek2"
+        },
+        {
+          "Name": "label",
+          "Value": "HomeController.bundle.scp.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-+h3S7vqAEMYJG895AnxQ2ropBiCcYObds2pYCKDwrUQ="
+        }
+      ]
+    },
+    {
+      "Route": "HomeController.qg2a3ksek2.bundle.scp.css",
+      "AssetFile": "C:\\Users\\HP\\Documents\\Projects\\Home-Controller\\Frontend\\HomeController\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\HomeController.bundle.scp.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "113945"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"+h3S7vqAEMYJG895AnxQ2ropBiCcYObds2pYCKDwrUQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 09 Jun 2025 17:23:48 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2510,7 +2647,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "0f5god71x2"
+          "Value": "qg2a3ksek2"
         },
         {
           "Name": "label",
@@ -2518,13 +2655,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-bJsNL0Hkn6Z5c5huyy+CkAw7/axE0Q55AFZ1vv3AfGM="
+          "Value": "sha256-+h3S7vqAEMYJG895AnxQ2ropBiCcYObds2pYCKDwrUQ="
         }
       ]
     },
     {
-      "Route": "HomeController.0f5god71x2.bundle.scp.css.gz",
-      "AssetFile": "C:\\Users\\HP\\Documents\\Projects\\Home-Controller\\Frontend\\HomeController\\obj\\Debug\\net9.0\\compressed\\7l5v4e5f9o-0f5god71x2.gz",
+      "Route": "HomeController.qg2a3ksek2.bundle.scp.css.gz",
+      "AssetFile": "C:\\Users\\HP\\Documents\\Projects\\Home-Controller\\Frontend\\HomeController\\obj\\Debug\\net9.0\\compressed\\7l5v4e5f9o-qg2a3ksek2.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2533,7 +2670,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3463"
+          "Value": "10138"
         },
         {
           "Name": "Content-Type",
@@ -2541,11 +2678,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"fTABoWcvTQLtcfc1Sg/tg/xzoejlxhC9zYVchFaHjAA=\""
+          "Value": "\"ALufCQiCra9nxxiWb4AsC/mUl3kwZGzKwifD7e6S5I0=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 23 May 2025 17:53:40 GMT"
+          "Value": "Mon, 09 Jun 2025 17:23:48 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2563,7 +2700,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "0f5god71x2"
+          "Value": "qg2a3ksek2"
         },
         {
           "Name": "label",
@@ -2571,18 +2708,18 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-fTABoWcvTQLtcfc1Sg/tg/xzoejlxhC9zYVchFaHjAA="
+          "Value": "sha256-ALufCQiCra9nxxiWb4AsC/mUl3kwZGzKwifD7e6S5I0="
         }
       ]
     },
     {
-      "Route": "HomeController.0f5god71x2.styles.css",
-      "AssetFile": "C:\\Users\\HP\\Documents\\Projects\\Home-Controller\\Frontend\\HomeController\\obj\\Debug\\net9.0\\compressed\\s389oewfaj-0f5god71x2.gz",
+      "Route": "HomeController.qg2a3ksek2.styles.css",
+      "AssetFile": "C:\\Users\\HP\\Documents\\Projects\\Home-Controller\\Frontend\\HomeController\\obj\\Debug\\net9.0\\compressed\\s389oewfaj-qg2a3ksek2.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000288683603"
+          "Quality": "0.000098629056"
         }
       ],
       "ResponseHeaders": [
@@ -2592,15 +2729,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3463"
+          "Value": "10138"
         },
         {
           "Name": "ETag",
-          "Value": "\"fTABoWcvTQLtcfc1Sg/tg/xzoejlxhC9zYVchFaHjAA=\""
+          "Value": "\"ALufCQiCra9nxxiWb4AsC/mUl3kwZGzKwifD7e6S5I0=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 23 May 2025 17:53:40 GMT"
+          "Value": "Mon, 09 Jun 2025 17:23:48 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2620,13 +2757,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"bJsNL0Hkn6Z5c5huyy+CkAw7/axE0Q55AFZ1vv3AfGM=\""
+          "Value": "W/\"+h3S7vqAEMYJG895AnxQ2ropBiCcYObds2pYCKDwrUQ=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "0f5god71x2"
+          "Value": "qg2a3ksek2"
         },
         {
           "Name": "label",
@@ -2634,12 +2771,12 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-bJsNL0Hkn6Z5c5huyy+CkAw7/axE0Q55AFZ1vv3AfGM="
+          "Value": "sha256-+h3S7vqAEMYJG895AnxQ2ropBiCcYObds2pYCKDwrUQ="
         }
       ]
     },
     {
-      "Route": "HomeController.0f5god71x2.styles.css",
+      "Route": "HomeController.qg2a3ksek2.styles.css",
       "AssetFile": "C:\\Users\\HP\\Documents\\Projects\\Home-Controller\\Frontend\\HomeController\\obj\\Debug\\net9.0\\scopedcss\\bundle\\HomeController.styles.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -2649,7 +2786,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "24163"
+          "Value": "113945"
         },
         {
           "Name": "Content-Type",
@@ -2657,11 +2794,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"bJsNL0Hkn6Z5c5huyy+CkAw7/axE0Q55AFZ1vv3AfGM=\""
+          "Value": "\"+h3S7vqAEMYJG895AnxQ2ropBiCcYObds2pYCKDwrUQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 23 May 2025 17:53:40 GMT"
+          "Value": "Mon, 09 Jun 2025 17:23:48 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2671,7 +2808,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "0f5god71x2"
+          "Value": "qg2a3ksek2"
         },
         {
           "Name": "label",
@@ -2679,13 +2816,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-bJsNL0Hkn6Z5c5huyy+CkAw7/axE0Q55AFZ1vv3AfGM="
+          "Value": "sha256-+h3S7vqAEMYJG895AnxQ2ropBiCcYObds2pYCKDwrUQ="
         }
       ]
     },
     {
-      "Route": "HomeController.0f5god71x2.styles.css.gz",
-      "AssetFile": "C:\\Users\\HP\\Documents\\Projects\\Home-Controller\\Frontend\\HomeController\\obj\\Debug\\net9.0\\compressed\\s389oewfaj-0f5god71x2.gz",
+      "Route": "HomeController.qg2a3ksek2.styles.css.gz",
+      "AssetFile": "C:\\Users\\HP\\Documents\\Projects\\Home-Controller\\Frontend\\HomeController\\obj\\Debug\\net9.0\\compressed\\s389oewfaj-qg2a3ksek2.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2694,7 +2831,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3463"
+          "Value": "10138"
         },
         {
           "Name": "Content-Type",
@@ -2702,11 +2839,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"fTABoWcvTQLtcfc1Sg/tg/xzoejlxhC9zYVchFaHjAA=\""
+          "Value": "\"ALufCQiCra9nxxiWb4AsC/mUl3kwZGzKwifD7e6S5I0=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 23 May 2025 17:53:40 GMT"
+          "Value": "Mon, 09 Jun 2025 17:23:48 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2724,7 +2861,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "0f5god71x2"
+          "Value": "qg2a3ksek2"
         },
         {
           "Name": "label",
@@ -2732,155 +2869,18 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-fTABoWcvTQLtcfc1Sg/tg/xzoejlxhC9zYVchFaHjAA="
-        }
-      ]
-    },
-    {
-      "Route": "HomeController.bundle.scp.css",
-      "AssetFile": "C:\\Users\\HP\\Documents\\Projects\\Home-Controller\\Frontend\\HomeController\\obj\\Debug\\net9.0\\compressed\\7l5v4e5f9o-0f5god71x2.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "0.000288683603"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "3463"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"fTABoWcvTQLtcfc1Sg/tg/xzoejlxhC9zYVchFaHjAA=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 23 May 2025 17:53:40 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"bJsNL0Hkn6Z5c5huyy+CkAw7/axE0Q55AFZ1vv3AfGM=\""
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-bJsNL0Hkn6Z5c5huyy+CkAw7/axE0Q55AFZ1vv3AfGM="
-        }
-      ]
-    },
-    {
-      "Route": "HomeController.bundle.scp.css",
-      "AssetFile": "C:\\Users\\HP\\Documents\\Projects\\Home-Controller\\Frontend\\HomeController\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\HomeController.bundle.scp.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "24163"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"bJsNL0Hkn6Z5c5huyy+CkAw7/axE0Q55AFZ1vv3AfGM=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 23 May 2025 17:53:40 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-bJsNL0Hkn6Z5c5huyy+CkAw7/axE0Q55AFZ1vv3AfGM="
-        }
-      ]
-    },
-    {
-      "Route": "HomeController.bundle.scp.css.gz",
-      "AssetFile": "C:\\Users\\HP\\Documents\\Projects\\Home-Controller\\Frontend\\HomeController\\obj\\Debug\\net9.0\\compressed\\7l5v4e5f9o-0f5god71x2.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "3463"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"fTABoWcvTQLtcfc1Sg/tg/xzoejlxhC9zYVchFaHjAA=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 23 May 2025 17:53:40 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-fTABoWcvTQLtcfc1Sg/tg/xzoejlxhC9zYVchFaHjAA="
+          "Value": "sha256-ALufCQiCra9nxxiWb4AsC/mUl3kwZGzKwifD7e6S5I0="
         }
       ]
     },
     {
       "Route": "HomeController.styles.css",
-      "AssetFile": "C:\\Users\\HP\\Documents\\Projects\\Home-Controller\\Frontend\\HomeController\\obj\\Debug\\net9.0\\compressed\\s389oewfaj-0f5god71x2.gz",
+      "AssetFile": "C:\\Users\\HP\\Documents\\Projects\\Home-Controller\\Frontend\\HomeController\\obj\\Debug\\net9.0\\compressed\\s389oewfaj-qg2a3ksek2.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000288683603"
+          "Quality": "0.000098629056"
         }
       ],
       "ResponseHeaders": [
@@ -2890,15 +2890,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3463"
+          "Value": "10138"
         },
         {
           "Name": "ETag",
-          "Value": "\"fTABoWcvTQLtcfc1Sg/tg/xzoejlxhC9zYVchFaHjAA=\""
+          "Value": "\"ALufCQiCra9nxxiWb4AsC/mUl3kwZGzKwifD7e6S5I0=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 23 May 2025 17:53:40 GMT"
+          "Value": "Mon, 09 Jun 2025 17:23:48 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2918,13 +2918,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"bJsNL0Hkn6Z5c5huyy+CkAw7/axE0Q55AFZ1vv3AfGM=\""
+          "Value": "W/\"+h3S7vqAEMYJG895AnxQ2ropBiCcYObds2pYCKDwrUQ=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-bJsNL0Hkn6Z5c5huyy+CkAw7/axE0Q55AFZ1vv3AfGM="
+          "Value": "sha256-+h3S7vqAEMYJG895AnxQ2ropBiCcYObds2pYCKDwrUQ="
         }
       ]
     },
@@ -2939,7 +2939,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "24163"
+          "Value": "113945"
         },
         {
           "Name": "Content-Type",
@@ -2947,11 +2947,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"bJsNL0Hkn6Z5c5huyy+CkAw7/axE0Q55AFZ1vv3AfGM=\""
+          "Value": "\"+h3S7vqAEMYJG895AnxQ2ropBiCcYObds2pYCKDwrUQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 23 May 2025 17:53:40 GMT"
+          "Value": "Mon, 09 Jun 2025 17:23:48 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2961,13 +2961,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-bJsNL0Hkn6Z5c5huyy+CkAw7/axE0Q55AFZ1vv3AfGM="
+          "Value": "sha256-+h3S7vqAEMYJG895AnxQ2ropBiCcYObds2pYCKDwrUQ="
         }
       ]
     },
     {
       "Route": "HomeController.styles.css.gz",
-      "AssetFile": "C:\\Users\\HP\\Documents\\Projects\\Home-Controller\\Frontend\\HomeController\\obj\\Debug\\net9.0\\compressed\\s389oewfaj-0f5god71x2.gz",
+      "AssetFile": "C:\\Users\\HP\\Documents\\Projects\\Home-Controller\\Frontend\\HomeController\\obj\\Debug\\net9.0\\compressed\\s389oewfaj-qg2a3ksek2.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2976,7 +2976,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3463"
+          "Value": "10138"
         },
         {
           "Name": "Content-Type",
@@ -2984,11 +2984,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"fTABoWcvTQLtcfc1Sg/tg/xzoejlxhC9zYVchFaHjAA=\""
+          "Value": "\"ALufCQiCra9nxxiWb4AsC/mUl3kwZGzKwifD7e6S5I0=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 23 May 2025 17:53:40 GMT"
+          "Value": "Mon, 09 Jun 2025 17:23:48 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3006,7 +3006,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-fTABoWcvTQLtcfc1Sg/tg/xzoejlxhC9zYVchFaHjAA="
+          "Value": "sha256-ALufCQiCra9nxxiWb4AsC/mUl3kwZGzKwifD7e6S5I0="
         }
       ]
     },

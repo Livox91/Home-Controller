@@ -2,63 +2,34 @@ namespace HomeController.Models
 {
     public class WashingMachine : IDevice
     {
-        public string Id { get; set; }
-        public string Model { get; set; }
-        public string Brand { get; set; }
-        public bool IsRunning { get; set; }
-        public int CurrentCycle { get; set; } // e.g., 0 = Off, 1 = Wash, 2 = Rinse, 3 = Spin
-        public int WaterLevel { get; set; } // Percentage (0-100)
-        public int LoadWeight { get; set; } // In kilograms
+        public int CurrentCycle { get; set; } // e.g., 0 = Idle, 1 = Wash, 2 = Rinse, 3 = Dry
         public DateTime? StartTime { get; set; }
         public DateTime? EndTime { get; set; }
-        public string Ipaddr { get; set; }
-        public void Start(int cycle)
+        public int WaterLevel { get; set; } // Estimated water usage
+        public int TotalCycles { get; set; } // Estimated energy usage
+
+        public void StartCycle(int cycle)
         {
-            if (!IsRunning)
-            {
-                IsRunning = true;
-                CurrentCycle = cycle;
-                StartTime = DateTime.Now;
-            }
+            CurrentCycle = cycle;
+            StartTime = DateTime.Now;
+            Console.WriteLine($"Dishwasher started on cycle {cycle}.");
         }
 
-        public void Stop()
+        public void StopCycle()
         {
-            if (IsRunning)
-            {
-                IsRunning = false;
-                CurrentCycle = 0;
-                EndTime = DateTime.Now;
-            }
+            EndTime = DateTime.Now;
         }
 
-        public void UpdateWaterLevel(int level)
+        public void Reset()
         {
-            WaterLevel = level;
+            CurrentCycle = 0;
+            StartTime = null;
+            EndTime = null;
+            Console.WriteLine("Dishwasher has been reset.");
         }
 
-        public void UpdateLoadWeight(int weight)
-        {
-            LoadWeight = weight;
-        }
+        public override void TurnOn() { }
 
-        override public void TurnOn()
-        {
-            if (!IsRunning)
-            {
-                IsRunning = true;
-                CurrentCycle = 0; // Machine is on but not running a cycle
-            }
-        }
-
-        override public void TurnOff()
-        {
-            if (IsRunning)
-            {
-                IsRunning = false;
-                CurrentCycle = 0;
-                EndTime = DateTime.Now;
-            }
-        }
+        public override void TurnOff() { }
     }
 }

@@ -24,10 +24,6 @@ build_property.EnableCodeStyleSeverity =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBcHAucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/Documents/Projects/Home-Controller/Frontend/HomeController/Components/Pages/AddDeviceDropdown.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBZGREZXZpY2VEcm9wZG93bi5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/HP/Documents/Projects/Home-Controller/Frontend/HomeController/Components/Routes.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xSb3V0ZXMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
@@ -36,9 +32,53 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xfSW1wb3J0cy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/HP/Documents/Projects/Home-Controller/Frontend/HomeController/Components/DeviceComponents/AirCoolerComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xEZXZpY2VDb21wb25lbnRzXEFpckNvb2xlckNvbXBvbmVudC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-ycgge760ir
+
+[C:/Users/HP/Documents/Projects/Home-Controller/Frontend/HomeController/Components/DeviceComponents/AirPurifierComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xEZXZpY2VDb21wb25lbnRzXEFpclB1cmlmaWVyQ29tcG9uZW50LnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-wgrjg19ajx
+
+[C:/Users/HP/Documents/Projects/Home-Controller/Frontend/HomeController/Components/DeviceComponents/DishWasherComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xEZXZpY2VDb21wb25lbnRzXERpc2hXYXNoZXJDb21wb25lbnQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-4h43yt6q0c
+
+[C:/Users/HP/Documents/Projects/Home-Controller/Frontend/HomeController/Components/DeviceComponents/FanComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xEZXZpY2VDb21wb25lbnRzXEZhbkNvbXBvbmVudC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-zxt2erjp0p
+
+[C:/Users/HP/Documents/Projects/Home-Controller/Frontend/HomeController/Components/DeviceComponents/HomeTheaterComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xEZXZpY2VDb21wb25lbnRzXEhvbWVUaGVhdGVyQ29tcG9uZW50LnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-xq4pf4wcfx
+
+[C:/Users/HP/Documents/Projects/Home-Controller/Frontend/HomeController/Components/DeviceComponents/LightComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xEZXZpY2VDb21wb25lbnRzXExpZ2h0Q29tcG9uZW50LnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-cz4hzia49j
+
+[C:/Users/HP/Documents/Projects/Home-Controller/Frontend/HomeController/Components/DeviceComponents/MicrowaveComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xEZXZpY2VDb21wb25lbnRzXE1pY3Jvd2F2ZUNvbXBvbmVudC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-5qfhqfwxpw
+
+[C:/Users/HP/Documents/Projects/Home-Controller/Frontend/HomeController/Components/DeviceComponents/TelevisionComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xEZXZpY2VDb21wb25lbnRzXFRlbGV2aXNpb25Db21wb25lbnQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-8wqgvacd7q
+
+[C:/Users/HP/Documents/Projects/Home-Controller/Frontend/HomeController/Components/DeviceComponents/WashingMachineComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xEZXZpY2VDb21wb25lbnRzXFdhc2hpbmdNYWNoaW5lQ29tcG9uZW50LnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-w7ehcgcpm4
+
+[C:/Users/HP/Documents/Projects/Home-Controller/Frontend/HomeController/Components/DeviceComponents/WaterHeaterComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xEZXZpY2VDb21wb25lbnRzXFdhdGVySGVhdGVyQ29tcG9uZW50LnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-3dgjozjy0s
+
 [C:/Users/HP/Documents/Projects/Home-Controller/Frontend/HomeController/Components/Layout/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTWFpbkxheW91dC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-mx7gye8ygd
+
+[C:/Users/HP/Documents/Projects/Home-Controller/Frontend/HomeController/Components/Pages/AddDeviceDropdown.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBZGREZXZpY2VEcm9wZG93bi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-qm3dg1fg3b
 
 [C:/Users/HP/Documents/Projects/Home-Controller/Frontend/HomeController/Components/Pages/Home.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xIb21lLnJhem9y
@@ -47,10 +87,6 @@ build_metadata.AdditionalFiles.CssScope = b-lzo7cajc8y
 [C:/Users/HP/Documents/Projects/Home-Controller/Frontend/HomeController/Components/Pages/LandingPage.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xMYW5kaW5nUGFnZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-eef0y3z74w
-
-[C:/Users/HP/Documents/Projects/Home-Controller/Frontend/HomeController/Components/Pages/LightComponent.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xMaWdodENvbXBvbmVudC5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = b-ufa64mixkp
 
 [C:/Users/HP/Documents/Projects/Home-Controller/Frontend/HomeController/Components/Pages/RoomPage.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xSb29tUGFnZS5yYXpvcg==

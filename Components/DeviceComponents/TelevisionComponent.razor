@@ -1,0 +1,118 @@
+@using HomeController.Models
+@using System.Text.Json
+
+<div class="popup-overlay" @onclick="ClosePopup">
+    <div class="popup-content" @onclick:stopPropagation>
+        <div class="channel-section">
+            <label for="channel-controls">Channel:</label>
+            <div class="channel-controls">
+                <div class="channel-input-group">
+                    <div class="channel-display-wrapper">
+                        <input type="number" id="channel-input" min="1" max="999" @bind="device.CurrentChannel" />
+                        <div class="channel-display">
+                            <span class="channel-number">@device.CurrentChannel</span>
+                            <span class="channel-label">CH</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="preset-channels">
+                    <button class="preset-btn" @onclick="() => device.SetChannel(1)">1</button>
+                    <button class="preset-btn" @onclick="() => device.SetChannel(2)">2</button>
+                    <button class="preset-btn" @onclick="() => device.SetChannel(3)">3</button>
+                    <button class="preset-btn" @onclick="() => device.SetChannel(4)">4</button>
+                    <button class="preset-btn" @onclick="() => device.SetChannel(5)">5</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="button-section">
+            @if (device.deviceStatus == "Running")
+            {
+                <button @onclick="OnTurnOff">Turn Off</button>
+            }
+            else
+            {
+                <button @onclick="OnTurnOn">Turn On</button>
+            }
+            <button @onclick="OnDelete">Delete</button>
+            <button @onclick="OnSave">Save</button>
+        </div>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public string responseBody { get; set; } = "";
+
+    [Parameter]
+    public Television? device { get; set; }
+
+    [Parameter]
+    public EventCallback OnClose { get; set; }
+
+    [Parameter]
+    public EventCallback OnTurnOnClicked { get; set; }
+
+    [Parameter]
+    public EventCallback OnTurnOffClicked { get; set; }
+
+    [Parameter]
+    public EventCallback OnDeleteClicked { get; set; }
+
+    [Parameter]
+    public EventCallback<string> OnSaveClicked { get; set; }
+
+    protected override void OnInitialized()
+    {
+        if (!string.IsNullOrEmpty(responseBody))
+        {
+            try
+            {
+                using JsonDocument doc = JsonDocument.Parse(responseBody);
+                JsonElement root = doc.RootElement;
+
+                if (root.TryGetProperty("state", out JsonElement state))
+                {
+                    device.CurrentChannel = state.TryGetProperty("CurrentChannel", out JsonElement channel) ? channel.GetInt32() : 1;
+                }
+            }
+            catch (JsonException)
+            {
+                device.CurrentChannel = 1; // Default channel if parsing fails
+            }
+        }
+        else
+        {
+            device.CurrentChannel = 1; // Default channel if no response
+        }
+    }
+    private async Task ClosePopup()
+    {
+        await OnClose.InvokeAsync(null);
+    }
+    private async Task OnTurnOn()
+    {
+        await OnTurnOnClicked.InvokeAsync(null);
+    }
+
+    private async Task OnTurnOff()
+    {
+        await OnTurnOffClicked.InvokeAsync(null);
+    }
+
+    private async Task OnDelete()
+    {
+        await OnDeleteClicked.InvokeAsync(null);
+    }
+    private async Task OnSave()
+    {
+        var obj = new
+        {
+            action = "set",
+            currentChannel = device.CurrentChannel,
+        };
+        string Json = JsonSerializer.Serialize(obj);
+        await OnSaveClicked.InvokeAsync(Json);
+    }
+
+}

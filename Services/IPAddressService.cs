@@ -1,11 +1,10 @@
 using System.Net;
 
-
 namespace HomeController.Services
 {
-
     public class IPAssigner
     {
+        private readonly IConfiguration _config;
         private readonly IPAddress startIP;
         private readonly int maxHosts;
         List<string> assignedIPs = new List<string>();
@@ -13,12 +12,13 @@ namespace HomeController.Services
 
         private readonly HttpClient httpClient;
 
-        public IPAssigner(HttpClient httpClient, int maxHosts = 254)
+        public IPAssigner(HttpClient httpClient, IConfiguration config, int maxHosts = 254)
         {
             this.httpClient = httpClient;
-            this.startIP = IPAddress.Parse("192.168.1.0");
+            this._config = config;
+            this.startIP = IPAddress.Parse(_config["StartIP"]);
             this.maxHosts = maxHosts;
-            this.currentOffset = 30; // Start from .1 (e.g., 192.168.0.1)
+            this.currentOffset = 50; // Start from .1 (e.g., 192.168.0.1)
         }
 
         public async Task InitializeAsync()
@@ -29,9 +29,8 @@ namespace HomeController.Services
 
         public async Task GetAssignedIPsAsync()
         {
-            string url = "http://192.168.1.16:3000/ip/get?subnet=192.168.1.0/24";
-
-            httpClient.Timeout = TimeSpan.FromSeconds(15);
+            string url = $"http://{_config["BackendIP"]}:3000/ip/get?subnet={_config["SubnetMask"]}";
+            httpClient.Timeout = TimeSpan.FromSeconds(25);
 
             var response = await httpClient.GetAsync(url);
             var json = await response.Content.ReadAsStringAsync();
@@ -40,11 +39,9 @@ namespace HomeController.Services
             var ips = doc.RootElement.GetProperty("activeIPs").EnumerateArray();
             if (doc != null)
             {
-
                 foreach (var ip in ips)
                 {
                     var ipStr = ip.GetString();
-
                     assignedIPs.Add(ipStr);
                 }
             }
@@ -95,5 +92,4 @@ namespace HomeController.Services
             }
         }
     }
-
 };

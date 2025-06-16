@@ -1,7 +1,7 @@
 @rendermode InteractiveServer
 
 @inject HomeController.Services.DeviceService DeviceService
-
+@inject HomeController.Services.RoomService RoomService
 
 <div class="device-form">
     <div class="form-group">
@@ -54,102 +54,29 @@
     </div>
 </div>
 
-<style>
-    .device-form {
-        using HomeController.Services;
-        width: 400px;
-        background-color: #d9d9d9;
-        padding: 20px;
-        margin: auto;
-    }
-
-    .form-group {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 15px;
-    }
-
-    .form-group label {
-        font-size: 14px;
-        color: #333;
-    }
-
-    .form-group input,
-    .dropdown-header {
-        width: 200px;
-        height: 30px;
-        background-color: #1e1e1e;
-        color: white;
-        border: none;
-        padding: 5px 10px;
-        box-sizing: border-box;
-    }
-
-    .dropdown {
-        position: relative;
-        width: 200px;
-    }
-
-    .dropdown-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        cursor: pointer;
-    }
-
-    .dropdown-menu {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: #333;
-        color: white;
-        z-index: 1000;
-        display: block;
-        /* Add this to ensure it's displayed as a block element */
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        /* Optional: adds a shadow to make it visible */
-    }
-
-    .dropdown-item {
-        color: white;
-        padding: 8px 10px;
-        cursor: pointer;
-    }
-
-    .dropdown-item:hover {
-        background-color: #444;
-    }
-</style>
-
 @code {
-
-    private async Task onInitializedAsync()
-    {
-
-    }
     private string DeviceName { get; set; } = string.Empty;
     private string SelectedDeviceType { get; set; }
     private string SelectedRoom { get; set; }
+
     private bool ShowDeviceTypeDropdown { get; set; }
     private bool ShowRoomDropdown { get; set; }
 
-    private List<string> DeviceTypes { get; set; } = new List<string>
+    public List<string> DeviceTypes { get; set; } = new List<string>
 {
-"light",
-"fan",
-"aC"
+"Light", "Fan", "AirCooler", "AirPurifier",
+"Television","WashingMachine","Microwave","WaterHeater","DishWasher","HomeTheater"
 };
+    [Parameter]
+    public EventCallback onChanged { get; set; }
 
-    private List<string> Rooms { get; set; } = new List<string>
-{
-"Living Room",
-"Bedroom",
-"Kitchen",
-"Bathroom"
-};
+    public List<string> Rooms { get; set; }
 
+    protected override void OnInitialized()
+    {
+        Rooms = RoomService.GetRooms();
+
+    }
     private void ToggleDeviceTypeDropdown()
     {
         ShowDeviceTypeDropdown = !ShowDeviceTypeDropdown;
@@ -176,18 +103,36 @@
         ShowRoomDropdown = false;
     }
 
+    private bool DeviceExists(string deviceName, string deviceType, string room)
+    {
+        var devices = DeviceService.GetDevices();
+        foreach (var device in devices)
+        {
+            if (device.deviceName.Equals(deviceName, StringComparison.OrdinalIgnoreCase) &&
+            device.deviceType.Equals(deviceType, StringComparison.OrdinalIgnoreCase))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
     public async void AddDevice()
     {
+        if (DeviceExists(DeviceName, SelectedDeviceType, SelectedRoom))
+        {
+            Console.WriteLine("Device already exists.");
+            return;
+        }
         if (!string.IsNullOrWhiteSpace(DeviceName) && !string.IsNullOrWhiteSpace(SelectedDeviceType) &&
         !string.IsNullOrWhiteSpace(SelectedRoom))
         {
-            await DeviceService.CreateDevice(SelectedDeviceType, DeviceName, SelectedRoom);
+            await DeviceService.CreateDevice(SelectedDeviceType.ToLower(), DeviceName, SelectedRoom);
 
-            // Reset the form
             DeviceName = string.Empty;
             SelectedDeviceType = string.Empty;
             SelectedRoom = string.Empty;
         }
+        await onChanged.InvokeAsync();
     }
 
 }
